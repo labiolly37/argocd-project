@@ -17,4 +17,15 @@ spec:
         image: labiolly37/ecomm
         ports:
         - containerPort: 8080
-
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+spec:
+  selector:
+    app: myapp
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
